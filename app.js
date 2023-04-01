@@ -10,7 +10,8 @@ const fetchQuote = async (url) => {
     const quoteBox = document.querySelector(".box");
     quoteBox.innerHTML = `
       <div class="quote"> System on Maintenance Please refresh page </div>
-    `;
+      <i class="fa-solid fa-rotate-right request">
+      `;
   }
 };
 
@@ -61,7 +62,7 @@ const shareQuote = () => {
 };
 
 // Mobile Navigation Bar
-const nav = document.querySelector("nav");
+const nav = document.querySelector(".nav");
 nav.innerHTML = `
   <ul class="nav-content">
     <li class="nav-item"><span class="nav-icon"><i class="fa-solid fa-user"></i></span><a href="#">Account</a></li>
@@ -73,19 +74,5 @@ nav.innerHTML = `
   </ul>
 `;
 
-const menu = document.querySelector(".menu-icon");
-const cancel = document.querySelector(".cancel-icon");
-
-menu.addEventListener("click", () => {
-  menu.classList.add("hide");
-  cancel.classList.remove("hide");
-  nav.classList.remove("hide");
-});
-
-cancel.addEventListener("click", () => {
-  menu.classList.remove("hide");
-  cancel.classList.add("hide");
-  nav.classList.add("hide");
-});
 
 fetchQuote(apiUrl);
