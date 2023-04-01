@@ -99,7 +99,7 @@ p.logo {
 
 .nav {
   position: absolute;
-  background-color: #FFD7F3;
+  background-color: #ffd7f3fa;
   color: #000;
   top: 4.5rem;
   left: 0;
@@ -129,6 +129,29 @@ i.hide {
   display: block;
 }
 
+footer {
+  background-color: #ff3860;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: .3rem;
+  z-index: 99;
+}
+
+.fa-linkedin,
+.fa-github {
+  margin-left: .4rem;
+  color: #fff;
+}
+
+.fa-github:hover,
+.fa-linkedin:hover {
+  color: #555;
+}
+
 @media (min-width: 768px) {
   .quote {
     padding: 2rem;
@@ -147,9 +170,22 @@ i.hide {
     font-size: 2rem;
   }
 
-  .nav,
-  .header-icons {
+  .nav {
     display: none;
+  }
+
+
+  .header-icons .menu-icon {
+    display: none;
+  }
+
+  footer {
+    background-color: #ff3860;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    color: #fff;
+    width: 100%;
+    padding: .3rem;
   }
 
 }

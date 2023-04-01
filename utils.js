@@ -8,7 +8,6 @@ const copyQuote = () => {
     const text = `${quote.innerText} by ${author.innerText}`;
     try {
       navigator.clipboard.writeText(text);
-      console.log(text);
     } catch (err) {
       console.log("Error copying text", err);
     }
