@@ -10,7 +10,6 @@ const fetchQuote = async (url) => {
     const quoteBox = document.querySelector(".box");
     quoteBox.innerHTML = `
       <div class="quote"> System on Maintenance Please refresh page </div>
-      <i class="fa-solid fa-rotate-right request">
       `;
   }
 };
@@ -34,32 +33,12 @@ const renderQuote = (content, author) => {
   // share quote
   const share = document.querySelector('.share');
   share.addEventListener("click", shareQuote);
-
+  // share quote
+  const copy = document.querySelector(".copy");
+  copy.addEventListener("click", copyQuote);
 };
 
 const newRequest = () => fetchQuote(apiUrl);
-
-const shareQuote = () => {
-  let quote = document.querySelector(".quote");
-  let box = document.querySelector("article .box");
-  // box.style.display = "none";
-  const shareText = quote.innerText;
-  const shareUrl = 'http://127.0.0.1:5500/Quote_generator/index.html';
-
-  // Check if Web Share API is supported by the browser
-  if (navigator.share) {
-    navigator.share({
-      title: 'Quote Rush',
-      text: shareText,
-      url: shareUrl,
-    })
-      .then(console.log("it worked"))
-      .catch(error => console.error('Error sharing:', error));
-  }
-  else {
-    console.error('Web Share API not supported by the browser.');
-  }
-};
 
 // Mobile Navigation Bar
 const nav = document.querySelector(".nav");
