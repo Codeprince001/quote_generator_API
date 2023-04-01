@@ -103,7 +103,7 @@ p.logo {
   color: #000;
   top: 4.5rem;
   left: 0;
-  height: 100vh;
+  height: calc(100vh - 4.5rem);
   min-width: 40%;
   z-index: 99;
   padding: 1em;
