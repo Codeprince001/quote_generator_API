@@ -44,14 +44,39 @@ const newRequest = () => fetchQuote(apiUrl);
 const nav = document.querySelector(".nav");
 nav.innerHTML = `
   <ul class="nav-content">
-    <li class="nav-item"><span class="nav-icon"><i class="fa-solid fa-user"></i></span><a href="#">Account</a></li>
-    <li class="nav-item"><span class="nav-icon"><i class="fa-regular fa-credit-card"></i></span><a href="#">Subscription</a></li>
-    <li class="nav-item"><span class="nav-icon"><i class="fa-solid fa-heart"></i></span><a href="#">Favourite</a></li>
-    <li class="nav-item"><span class="nav-icon"><i class="fa-sharp fa-solid fa-bell"></i></span><a href="#">Notification</a></li>
-    <li class="nav-item"><span class="nav-icon"><i class="fa-solid fa-folder"></i></span><a href="#">Saves</a></li>
-    <li class="nav-item"><span class="nav-icon"><i class="fa-solid fa-gear"></i></span><a href="#">Settings</a></li>
+    <li class="nav-item  acct"><span class="nav-icon"><i class="fa-solid fa-user"></i></span><a href="#">Account</a></li>
+    <li class="nav-item  sub"><span class="nav-icon"><i class="fa-regular fa-credit-card"></i></span><a href="#">Subscription</a></li>
+    <li class="nav-item fav"><span class="nav-icon"><i class="fa-solid fa-heart"></i></span><a href="#">Favourite</a></li>
+    <li class="nav-item notify"><span class="nav-icon"><i class="fa-sharp fa-solid fa-bell"></i></span><a href="#">Notification</a></li>
+    <li class="nav-item  saves"><span class="nav-icon"><i class="fa-solid fa-folder"></i></span><a href="#">Saves</a></li>
+    <li class="nav-item setting"><span class="nav-icon"><i class="fa-solid fa-gear"></i></span><a href="#">Settings</a></li>
   </ul>
 `;
 
+const acct = document.querySelector(".acct");
+acct.addEventListener("click", acctVal);
+function acctVal() {
+  hideNavOnClick();
+  const signIn = document.querySelector(".sign-in");
+  signIn.classList.remove("hide");
+  signIn.innerHTML = `
+  <div class="right"><i class="fa-solid fa-xmark cancel-icon"></i></div>
+  <div class="sub-title">Sign up for Quote Rush</div>
+  <form action="post" class="form">
+    <label for="email">Email</label>
+    <input type="email" name="" id="email" placeholder="email">
+    <label for="pword">Password</label>
+    <input type="password" name="" id="pword" placeholder="password">
+    <p class="sign-up">
+      Don't have an account <a href="#">Sign up</a>
+    </p>
+  </form>`;
+
+}
+
+function hideNavOnClick() {
+  const mobileNav = document.querySelector(".nav");
+  mobileNav.classList.add("hide");
+}
 
 fetchQuote(apiUrl);

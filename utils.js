@@ -36,18 +36,23 @@ const shareQuote = () => {
   }
 };
 
+// Hide or Show Navigation
+
 const menu = document.querySelector(".menu-icon");
 const cancel = document.querySelector(".cancel-icon");
+const form = document.querySelector(".sign-in");
 
 document.addEventListener("click", (event) => {
   let clickOnNavbar = nav.contains(event.target);
   let clickOnMenuIcon = menu.contains(event.target);
   let clickOnCancelIcon = cancel.contains(event.target);
+  let clickOnForm = form.contains(event.target);
 
-  if (!clickOnNavbar && !clickOnMenuIcon && !clickOnCancelIcon) {
+  if (!clickOnNavbar && !clickOnMenuIcon && !clickOnCancelIcon && !clickOnForm) {
     menu.classList.remove("hide");
     cancel.classList.add("hide");
     nav.classList.add("hide");
+    form.classList.add("hide");
   }
 
   if (clickOnCancelIcon) {
