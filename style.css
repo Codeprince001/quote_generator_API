@@ -29,10 +29,6 @@ ul {
   justify-content: center;
 }
 
-.request {
-  text-align: center;
-}
-
 .hero {
   position: sticky;
   width: 100vw;
@@ -65,6 +61,11 @@ div.hero-body {
   transition: 50ms ease-in-out;
 }
 
+/* quote */
+.quote-box {
+  margin-top: 15%;
+}
+
 .quote {
   font-size: 1.2rem;
   font-weight: 500;
@@ -89,6 +90,12 @@ div.hero-body {
   font-size: 1.5rem;
   cursor: pointer;
   margin-right: 1rem;
+}
+
+.copy:hover,
+.request:hover,
+.share:hover {
+  color: #ff3860;
 }
 
 .hidden {
@@ -120,6 +127,10 @@ p.logo {
   border-bottom: 1px solid #555;
 }
 
+.nav-item:hover {
+  color: #ff3860;
+}
+
 .nav-icon {
   margin-right: .3rem;
 }
@@ -139,7 +150,7 @@ footer {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   color: #fff;
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   bottom: 0;
   width: 100%;
@@ -219,8 +230,8 @@ input {
     font-size: 2rem;
   }
 
-  .header-icons .menu-icon {
-    display: none;
+  .nav {
+    min-width: 25%;
   }
 
   /* form */
@@ -229,15 +240,6 @@ input {
     margin: 0 auto;
   }
 
-  /* nav */
-  .nav {
-    background-color: #ffd7f3fa;
-    color: #fff;
-  }
 
-  .nav-item {
-    font-size: 1.2em;
-    padding: .5em;
-  }
 
 }

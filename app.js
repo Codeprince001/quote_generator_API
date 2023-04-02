@@ -10,7 +10,12 @@ const fetchQuote = async (url) => {
     const quoteBox = document.querySelector(".box");
     quoteBox.innerHTML = `
       <div class="quote"> System on Maintenance Please refresh page </div>
+      <i class="fa-solid fa-rotate-right request"></i>
       `;
+    const request = document.querySelector(".box .request");
+    request.style.marginLeft = "40%";
+    request.style.fontSize = "2rem";
+    request.addEventListener("click", newRequest());
   }
 };
 
@@ -72,7 +77,12 @@ function acctVal() {
     </p>
   </form>`;
 
-}
+  const cancelSignIn = document.querySelector(".cancel-icon");
+  cancelSignIn.addEventListener("click", function () {
+    signIn.classList.add("hide");
+  });
+};
+
 
 function hideNavOnClick() {
   const mobileNav = document.querySelector(".nav");
