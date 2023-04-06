@@ -10,12 +10,12 @@ const fetchQuote = async (url) => {
     const quoteBox = document.querySelector(".box");
     quoteBox.innerHTML = `
       <div class="quote"> System on Maintenance Please refresh page </div>
-      <i class="fa-solid fa-rotate-right request"></i>
+      <div class="request"><i class="fa-solid fa-rotate-right"></i></div>
       `;
-    const request = document.querySelector(".box .request");
+    const request = document.querySelector(".request");
     request.style.marginLeft = "40%";
     request.style.fontSize = "2rem";
-    request.addEventListener("click", newRequest());
+    request.addEventListener("click", newRequest);
   }
 };
 
@@ -58,6 +58,7 @@ nav.innerHTML = `
   </ul>
 `;
 
+// Sign up options
 const acct = document.querySelector(".acct");
 acct.addEventListener("click", acctVal);
 function acctVal() {
@@ -65,7 +66,7 @@ function acctVal() {
   const signIn = document.querySelector(".sign-in");
   signIn.classList.remove("hide");
   signIn.innerHTML = `
-  <div class="right"><i class="fa-solid fa-xmark cancel-icon"></i></div>
+  <div class="right cancel"><i class="fa-solid fa-xmark"></i></div>
   <div class="sub-title">Sign up for Quote Rush</div>
   <form action="post" class="form">
     <label for="email">Email</label>
@@ -77,8 +78,8 @@ function acctVal() {
     </p>
   </form>`;
 
-  const cancelSignIn = document.querySelector(".cancel-icon");
-  cancelSignIn.addEventListener("click", function () {
+  const cancelSignIn = document.querySelector(".cancel");
+  cancelSignIn.addEventListener("click", () => {
     signIn.classList.add("hide");
   });
 };
@@ -90,3 +91,7 @@ function hideNavOnClick() {
 }
 
 fetchQuote(apiUrl);
+
+window.addEventListener('load', function () {
+  document.querySelector('body').classList.add('loaded');
+});

@@ -177,7 +177,7 @@ footer {
   top: calc(25%);
   bottom: 50%;
   transform: translate(-1%, -100%);
-  width: 80%;
+  width: 65%;
   padding: 2rem;
   margin: 0 auto;
 }
@@ -212,6 +212,44 @@ input {
   text-align: right;
 }
 
+#loader {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top-color: #00bcd4;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* hide the loader when all elements are loaded */
+body.loaded #loader {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .quote {
     padding: 2rem;
@@ -223,6 +261,7 @@ input {
 
   .box,
   .notification {
+    margin: 0 auto;
     max-width: 500px;
   }
 
@@ -236,7 +275,7 @@ input {
 
   /* form */
   .sign-in {
-    width: 40%;
+    width: 35%;
     margin: 0 auto;
   }
 

@@ -19,7 +19,7 @@ const shareQuote = () => {
   let quote = document.querySelector(".quote");
   let author = document.querySelector(".author");
   const shareText = quote.innerText;
-  const shareUrl = 'http://127.0.0.1:5500/Quote_generator/index.html';
+  const shareUrl = 'https://quoterush.netlify.app/#';
 
   // Check if Web Share API is supported by the browser
   if (navigator.share) {
@@ -48,6 +48,7 @@ document.addEventListener("click", (event) => {
   let clickOnCancelIcon = cancel.contains(event.target);
   let clickOnForm = form.contains(event.target);
 
+  // outside other than nav, menuIcon and cancelicon
   if (!clickOnNavbar && !clickOnMenuIcon && !clickOnCancelIcon && !clickOnForm) {
     menu.classList.remove("hide");
     cancel.classList.add("hide");
@@ -64,5 +65,10 @@ document.addEventListener("click", (event) => {
     menu.classList.add("hide");
     cancel.classList.remove("hide");
     nav.classList.remove("hide");
+  }
+
+  if (clickOnNavbar) {
+    menu.classList.remove("hide");
+    cancel.classList.add("hide");
   }
 });
