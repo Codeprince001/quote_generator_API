@@ -86,10 +86,12 @@ div.hero-body {
 }
 
 .icons {
-  text-align: center;
-  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2rem;
   cursor: pointer;
-  margin-right: 1rem;
+  margin-top: 1rem;
 }
 
 .copy:hover,
@@ -230,7 +232,7 @@ input {
   width: 50px;
   height: 50px;
   border: 5px solid #ccc;
-  border-top-color: #00bcd4;
+  border-top-color: #ff3860;
   border-radius: 50%;
   animation: spin 1s ease-in-out infinite;
 }
