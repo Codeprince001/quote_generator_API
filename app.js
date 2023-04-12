@@ -13,7 +13,7 @@ const fetchQuote = async (url) => {
       <div class="refresh"><i class="fa-solid fa-rotate-right"></i></div>
       `;
     const refresh = document.querySelector(".request");
-    refresh.addEventListener("click", newRequest);
+    refresh.addEventListener("click", () => {newRequest;});
   }
 };
 
