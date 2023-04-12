@@ -10,12 +10,10 @@ const fetchQuote = async (url) => {
     const quoteBox = document.querySelector(".box");
     quoteBox.innerHTML = `
       <div class="quote"> System on Maintenance Please refresh page </div>
-      <div class="request"><i class="fa-solid fa-rotate-right"></i></div>
+      <div class="refresh"><i class="fa-solid fa-rotate-right"></i></div>
       `;
-    const request = document.querySelector(".request");
-    request.style.marginLeft = "40%";
-    request.style.fontSize = "2rem";
-    request.addEventListener("click", newRequest);
+    const refresh = document.querySelector(".request");
+    refresh.addEventListener("click", newRequest);
   }
 };
 
@@ -27,9 +25,9 @@ const renderQuote = (content, author) => {
   speaker.innerText = `${author}`;
 
   icons.innerHTML = `
-    <i class="fa-solid fa-copy copy"></i>
-    <i class="fa-solid fa-rotate-right request"></i>
-    <i class="fa-solid fa-share-nodes share"></i>
+    <i alt="Copy text" class="fa-solid fa-copy copy"></i>
+    <i alt="request new quote" class="fa-solid fa-rotate-right request"></i>
+    <i alt="share quote"class="fa-solid fa-share-nodes share"></i>
   `;
 
   // make a new request for new quote
