@@ -65,12 +65,13 @@ function acctVal() {
   signIn.classList.remove("hide");
   signIn.innerHTML = `
   <div class="right cancel"><i class="fa-solid fa-xmark"></i></div>
-  <div class="sub-title">Sign up for Quote Rush</div>
+  <div class="sub-title">Sign in</div>
   <form action="post" class="form">
     <label for="email">Email</label>
     <input type="email" name="" id="email" placeholder="email">
     <label for="pword">Password</label>
     <input type="password" name="" id="pword" placeholder="password">
+    <button type="submit" class="btn submit-btn"> submit </button>
     <p class="sign-up">
       Don't have an account <a href="#">Sign up</a>
     </p>
@@ -79,6 +80,11 @@ function acctVal() {
   const cancelSignIn = document.querySelector(".cancel");
   cancelSignIn.addEventListener("click", () => {
     signIn.classList.add("hide");
+  });
+
+  const submit = document.querySelector(".submit-btn");
+  submit.addEventListener("click", (event) => {
+    event.preventDefault();
   });
 };
 

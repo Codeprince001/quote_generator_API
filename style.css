@@ -95,8 +95,11 @@ div.hero-body {
 .copy:hover,
 .request:hover,
 .share:hover {
+  cursor: pointer;
   color: #ff3860;
 }
+
+
 
 .hidden {
   display: none;
@@ -111,6 +114,25 @@ p.logo {
   display: flex;
   justify-content: center;
   font-size: 2rem;
+}
+
+.cancel {
+  cursor: pointer;
+}
+
+.submit-btn {
+  padding: .5rem;
+  margin-top: .5rem;
+  margin-left: 70%;
+  border-radius: 5px;
+  background-color: #ff3860;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.submit-btn:hover {
+  color: #b6b6b6;
 }
 
 /* navigation */
@@ -284,6 +306,10 @@ body.loaded #loader {
   .sign-in {
     width: 35%;
     margin: 0 auto;
+  }
+
+  .submit-btn {
+    margin-left: 78%;
   }
 
 
