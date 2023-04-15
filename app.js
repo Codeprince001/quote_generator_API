@@ -15,7 +15,6 @@ const fetchQuote = async (url) => {
       `;
     const refresh = document.querySelector(".refresh");
     refresh.addEventListener("click", () => {
-      console.log("refreshed");
       window.location.reload();
     });
   }
