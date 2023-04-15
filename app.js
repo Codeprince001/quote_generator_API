@@ -4,16 +4,20 @@ const fetchQuote = async (url) => {
   try {
     const response = await axios.get(url);
     const data = await response.data;
+    console.log(data);
     const { author, content } = data;
     renderQuote(content, author);
   } catch (error) {
     const quoteBox = document.querySelector(".box");
     quoteBox.innerHTML = `
-      <div class="quote"> System on Maintenance Please refresh page </div>
-      <div class="refresh"><i class="fa-solid fa-rotate-right"></i></div>
+      <div class="quote"> System on Maintenance, Please refresh page </div>
+      <div class="refresh"><button class="refresh-btn">refresh</button></div>
       `;
-    const refresh = document.querySelector(".request");
-    refresh.addEventListener("click", newRequest);
+    const refresh = document.querySelector(".refresh");
+    refresh.addEventListener("click", () => {
+      console.log("refreshed");
+      window.location.reload();
+    });
   }
 };
 
@@ -67,11 +71,17 @@ function acctVal() {
   <div class="right cancel"><i class="fa-solid fa-xmark"></i></div>
   <div class="sub-title">Sign in</div>
   <form action="post" class="form">
-    <label for="email">Email</label>
-    <input type="email" name="" id="email" placeholder="email">
-    <label for="pword">Password</label>
-    <input type="password" name="" id="pword" placeholder="password">
-    <button type="submit" class="btn submit-btn"> submit </button>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="user_email" id="email" placeholder="email" required>
+    </div>
+    <div>
+      <label for="pword">Password</label>
+      <input type="password" name="user_password" id="pword" placeholder="password" required>
+    </div>
+    <div class="submit">
+      <button type="submit" class="btn submit-btn"> submit </button>
+    <div>
     <p class="sign-up">
       Don't have an account <a href="#">Sign up</a>
     </p>
